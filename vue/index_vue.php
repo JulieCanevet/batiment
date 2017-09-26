@@ -22,11 +22,12 @@
 
         <!-- Add your site or application content here -->
 <section id="sign">
+    <h1>Bonjour bienvenue</h1>
 <!-- Contextual button for sign in -->
-<button type="button" class="btn btn-info">S'inscrire</button>
-
+<a href="sign_in.php" type="button" class="btn btn-info">S'inscrire</a>
+<br>
 <!-- Contextual button for sign up -->
-<button type="button" class="btn btn-warning">Se connecter</button>
+<a href="sign_up.php" type="button" class="btn btn-warning">Se connecter</a>
 </section>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
