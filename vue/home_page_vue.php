@@ -12,7 +12,7 @@
                 
                 <p class="card-text"><?php echo $value['description']?></p>
 
-			    <a href="project.php?id=<?php echo $value['id']?>" class="btn btn-primary">Voir plus</a>
+			    <a href="project_sheet.php?id=<?php echo $value['id']?>" class="btn btn-primary">Voir plus</a>
 			  </div>
 		</article>
 <?php } ?>
