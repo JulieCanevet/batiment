@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Connexion</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,18 +16,19 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <section class="row col-md-8 col-md-offset-2 registeration">
+        <section class="row col-md-6 col-md-offset-2 registeration">
             
-            <h3 class="headerSign">Votre profile</h3>      
-            <form class="col-md-10" action="sign_in.php" method="post" enctype="multipart/form-data">
+            <h3 class="headerSign">Connexion</h3>      
+            
+            <form class="col-md-10" action="sign_up.php" method="post" enctype="multipart/form-data">
                 <input class="form-control" type="text" name="name" placeholder="Votre nom">
-                <input class="form-control" type="text" name="first_name" placeholder="Votre prénom">
-                <input class="form-control" type="text" name="age" placeholder="Votre âge">
-                <input class="form-control" type="text" name="email" placeholder="Votre adresse mail">
+                <br>
                 <input class="form-control" type="password" name="pass" placeholder="Mot de passe">
 
-             <button type="submit" class="signbuttons btn btn-primary">s'inscrire</button>
+             <button type="submit" class="signbuttons btn btn-primary">se connecter</button>
             </form>
-    </section>
+            </div>
+        </article>
+      </section>
     </body>
 </html>
