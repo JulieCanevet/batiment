@@ -1,6 +1,5 @@
 <?php 
 session_start();
-include '../vue/sign_in_vue.php';
 // Si tous les champs sont remplis
 if(!empty($_POST['name']) && !empty($_POST['first_name']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['pass'])){
 include '../model/sign_in_post.php';
@@ -25,3 +24,4 @@ include '../model/sign_in_post.php';
 		ob_end_flush();
 	}
 }
+include '../vue/sign_in_vue.php';
