@@ -161,7 +161,21 @@ input{
     color: white;
 }
 
+/* disposition des cartes de projet */
+    .card {
+        width: 80%;
+        margin: auto;
+        margin-top: 2em;
+    }
 
+@media only screen and (min-width: 700px) {
+    /* SECTION CARTES ACCUEIL */
+
+    #cartes {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
 
 

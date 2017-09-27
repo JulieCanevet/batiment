@@ -13,6 +13,7 @@ function create_project($construction_name, $project_manager, $description, $sta
 	$req = $bdd -> prepare('INSERT INTO construction_project
 		(construction_name, project_manager, description, start_date, end_date) 
 		VALUES (:construction_name, :project_manager, :description, :start_date, :end_date)');
+	
 	$req -> execute(array(
 		'construction_name' => $construction_name,
 		'project_manager' => $project_manager,
