@@ -19,6 +19,7 @@
         <section id="header">
             <p>Bonjour <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['name']; ?> </p>
             <ul>
+                <li><a href="home_page.php">Accueil</a></li>
                 <li><a href="new_project.php">Nouveau projet</a></li>
                 <li><a href="index.php">Deconnexion</a></li>
             </ul>

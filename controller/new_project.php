@@ -1,4 +1,5 @@
 <?php
+session_start();
 ob_start();
 include '../model/new_project_post.php';
 include '../vue/header_vue.php'; // ajout du header page d'accueil

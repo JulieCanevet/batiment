@@ -6,4 +6,7 @@
     <p class="card-text">Dates : du <?php echo $project['start_date'] . ' au ' . $project['end_date']?></p>
     
     <p class="card-text"><?php echo $project['description']?></p>
+
+<a href="delete.php?click=<?php echo $project['id']?>">Supprimer le projet</a>
+<a href="add_task.php?click=<?php echo $project['id']?>">Ajouter des tâches</a>
 </article>
