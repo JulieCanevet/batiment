@@ -19,14 +19,12 @@ function add_task($task_name, $id_project, $executed){ // envoie nvl taches dans
 		'id_project' => $id_project,
 		'executed' => $executed
 	));
-
-	create_task($id_project);
 }
 
 function create_task($id_project){ // Selectionne les tâches concernées par le projet
 	global $bdd;
 
-	$req = $bdd -> prepare('SELECT task_name 
+	$req = $bdd -> prepare('SELECT * 
 		FROM add_task
 		WHERE id_project = :id_project
 		');
