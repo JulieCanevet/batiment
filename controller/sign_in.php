@@ -4,7 +4,9 @@ session_start();
 if(!empty($_POST['name']) && !empty($_POST['first_name']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['pass'])){
 include '../model/sign_in_post.php';
 
+if(preg_match("#^[1-9]{2}$#", $_POST['age'])){
 	if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
+
 //lancement de la fonction pour savoir si le pseudo est unique
 	$name = name($_POST['name'], $bdd);
 	
@@ -26,9 +28,13 @@ include '../model/sign_in_post.php';
 		header('Location:home_page.php');
 		ob_end_flush();
 	}
+	}
+	else {
+		echo 'saisie email incorect';
+	}
 }
 else {
-	echo 'saisie email incorect';
+	echo 'l\'age n\'est pas correct';
 }
 }
 include '../vue/sign_in_vue.php';

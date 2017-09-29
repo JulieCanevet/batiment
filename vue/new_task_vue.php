@@ -5,7 +5,7 @@
  <?php
 	foreach ($new_task as $value) { ?>
 		<p><?php echo ' ' . $value['task_name'] . ' ';
-?><a href="substep.php?click=<?php echo $value['id']?>&id=<?php echo $project['id']?>">sous-étapes</a></p>
+?><a href="substep.php?click=<?php echo $value['id']?>&id=<?php echo $id_project?>">sous-étapes</a></p>
 			<a href="delete.php?delete=<?php echo $value['id']?>&id=<?php echo $id_project ?>">Supprimer la tâche</a>
 <?php
 } }

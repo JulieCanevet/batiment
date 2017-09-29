@@ -8,11 +8,12 @@ if (isset($_GET['click'])){
 	$id_project = $_GET['click'];
 
 	include '../vue/add_task_vue.php';
-}
+
 
 	if(!empty($_POST['task_name'])){				
 		$new = add_task($_POST['task_name'], $id_project, 'false');
 	}		
 		$new_task = create_task($id_project);
-
+		$new_task['id_project'] = $_GET['id'];
 		include '../vue/new_task_vue.php';
+}
