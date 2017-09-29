@@ -1,7 +1,7 @@
  <section class="row col-md-8 col-md-offset-2 registeration">
             
             <h3 class="headerSign">Ajouter une sous-étape</h3>      
-            <form class="col-md-10" action="substep.php?click=<?php echo $id_task?>" method="post" enctype="multipart/form-data">
+            <form class="col-md-10" action="substep.php?click=<?php echo $id_task?>&id=<? echo $id_project ?>" method="post" enctype="multipart/form-data">
 
                 <input class="form-control" type="text" name="title" placeholder="Nom de la sous-étape">
                 <input class="form-control" type="text" name="substep_description" placeholder="description">
@@ -9,4 +9,5 @@
 
              <button type="submit" class="signbuttons btn btn-primary">ajouter</button>
             </form>
+            <a href="project_sheet.php?id=<?php echo $id_project ?>">retour</a>
     </section>

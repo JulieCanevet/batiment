@@ -8,4 +8,6 @@
 
              <button type="submit" class="signbuttons btn btn-primary">ajouter</button>
             </form>
+        <a href="project_sheet.php?id=<?php echo $id_project?>">Retour projet</a>
+
     </section>
