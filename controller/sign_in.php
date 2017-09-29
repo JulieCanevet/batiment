@@ -11,8 +11,10 @@ include '../model/sign_in_post.php';
 		echo 'un utilisateur a le même nom que toi (surement ton frere), ajoute un chiffre derriere';
 	}
 	else {
+		// cache le mot de passe
+		$pass_hache = sha1($_POST['pass']);
 		// Sinon lancement de la fonction pour enregistrer les infos en bdd
-		inscription($_POST['name'], $_POST['first_name'], $_POST['age'], $_POST['email'], $_POST['pass'], $bdd);
+		inscription($_POST['name'], $_POST['first_name'], $_POST['age'], $_POST['email'], $pass_hache, $bdd);
 
 		// enregistrement des variables de session nom et prénom
 		$_SESSION['first_name'] = $_POST['first_name'];

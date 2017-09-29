@@ -23,3 +23,11 @@ function delete_substep ($id_sub, $bdd){
 		'id' => $id_sub
 	));
 }
+
+function delete_task ($id_task, $bdd){
+		$req = $bdd -> prepare('DELETE FROM add_task
+		WHERE id = :id');
+	$req -> execute(array(
+		'id' => $id_task
+	));
+}
