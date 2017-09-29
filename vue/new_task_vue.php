@@ -14,6 +14,8 @@
  <?php	foreach ($new_substep as $value) { ?>
 			<h4><?php echo ' ' . $value['title'] . ' ';?></h4>
 			<p><?php echo ' ' . $value['substep_description']?></p>
+			<a href="delete.php?del=<?php echo $value['id']?>&id=<?php echo $id_project ?>">Supprimer la sous-étape</a>
+
 <?php }
 	}
 ?>

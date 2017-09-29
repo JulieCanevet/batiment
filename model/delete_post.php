@@ -15,3 +15,11 @@ function delete ($id_d, $bdd){
 		'id' => $id_d
 	));
 }
+
+function delete_substep ($id_sub, $bdd){
+		$req = $bdd -> prepare('DELETE FROM substep
+		WHERE id = :id');
+	$req -> execute(array(
+		'id' => $id_sub
+	));
+}
