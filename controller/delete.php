@@ -4,7 +4,7 @@ include '../model/delete_post.php';
 if (isset($_GET['click'])){ // suppression des projets
 
 	$delete = delete($_GET['click'], $bdd);
-	include '../vue/delete_vue.php';
+	header('Location:project_sheet.php?id=' . $id_project . '&id_task=' . $value['id']);
 }
 
 if (isset($_GET['del'])){ // suppression des sous étapes

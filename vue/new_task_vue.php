@@ -6,7 +6,22 @@
 		<ul>
  		<?php
 		foreach ($new_task as $value) {	?>
-					<form action="project_sheet.php?id=<?php echo $id_project?>&id_task=<?php echo $value['id'] ?>" method="post">
+		<article class="display_tasks_substeps"
+	<?php		
+				
+				if ($value['executed'] == 1){
+					?>
+		<li><h4 class="done"><?php echo ' ' . $value['task_name'] . ' ' ;?></h4><?php
+	}
+			else{?>
+
+			<li><p><?php echo ' ' . $value['task_name'] . ' ' ;
+				} ?>
+					<a href="delete.php?delete=<?php echo $value['id']?>&id=<?php echo $id_project ?>"><i class="fa fa-trash" aria-hidden="true"></i></a> <!--supprimer-->
+										
+					<a href="substep.php?click=<?php echo $value['id']?>&id=<?php echo $id_project ?>"><i class="fa fa-search" aria-hidden="true"></i></a><!-- voir plus -->
+					
+					<form class="bouton" action="project_sheet.php?id=<?php echo $id_project?>&id_task=<?php echo $value['id'] ?>" method="post">
 						
 						<input type="hidden" name="executed" value="<?php if ($value['executed'] == 0){
 						echo '1';
@@ -15,22 +30,13 @@
 							echo '0';
 						} ?>">
 
-						<input type="submit" value="nonFait">						
-					</form><?php		
-				
-				if ($value['executed'] == 1){
-					?>
-		<li><p class="done"><?php echo ' ' . $value['task_name'] . ' ' ;?><?php
-	}
-			else{?>
-
-			<li><p><?php echo ' ' . $value['task_name'] . ' ' ;
-				} ?>
-					<a href="delete.php?delete=<?php echo $value['id']?>&id=<?php echo $id_project ?>"><i class="fa fa-trash" aria-hidden="true"></i></a> <!--supprimer-->
-										
-					<a href="substep.php?click=<?php echo $value['id']?>&id=<?php echo $id_project ?>">Détail</a><!-- voir plus -->
+						<button type="submit" value="">
+							<i class="fa fa-check-square-o" aria-hidden="true"></i>
+						</button>
+					</form>
 				</p>
 			</li>
+		</article>
 			<?php
 		} 
 		?>

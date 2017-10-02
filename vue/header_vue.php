@@ -19,7 +19,7 @@
     <body>
          <section id="header">
 
-    <!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded menu">
+     <nav class="navbar navbar-toggleable-md navbar-light bg-faded menu">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -37,7 +37,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php"><i class="fa fa-power-off" aria-hidden="true"></i> Deconnexion</a>
                 </li>
-            </ul> -->
+            </ul>
         </article>
     </nav>
 </section>

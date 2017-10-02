@@ -26,3 +26,4 @@ else {
 }
 
 }
+include '../vue/footer_vue.php';

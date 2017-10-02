@@ -19,3 +19,4 @@ if (isset($_GET['click'])){
 		$new_substep = create_substep($id_task);
 		include '../vue/new_task_vue.php';
 	include '../vue/substep_vue.php';
+	include '../vue/footer_vue.php';

@@ -188,28 +188,38 @@ nav ul li:hover {
 #project_description a {
     color: #f7ea02;
 }
+
 /* mise en forme de la description des sous-etapes */
     #new_task {
     border: 10px solid #f7ea02ac;
     background-color: #fcfff3e1;
     border-radius: 0;
     padding: 1em;
-    margin: 2em auto 2em auto;
+    margin: 5em auto 2em auto;
 }
-#new_task a {
-    color: #807f79;
-}
-    #new_task ul {
-        list-style-type: none;
-    }
+
     #project_sheet h2, #project_sheet h3 {
         letter-spacing: .1em;
-    } 
+    }
+
+.display_tasks_substeps { /* article options des taches*/
+    display: flex;
+}
+
+.display_tasks_substeps a, .display_tasks_substeps button {
+    margin-left: .8em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: grey;
+    font-family: 'Questrial', sans-serif;
+}
 
 @media only screen and (min-width: 700px) {
     .navbar{
     position: fixed;
     width: 100%;
+    top:0;
     background-color: #f7ea02ac;
 }
 /* SECTION CARTES ACCUEIL */
@@ -217,6 +227,7 @@ nav ul li:hover {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin-top: 4em;
     }
 
 

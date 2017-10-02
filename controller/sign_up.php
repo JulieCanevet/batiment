@@ -25,4 +25,6 @@ if(!empty($_POST['name']) && !empty($_POST['pass'])){
 }
 
 include '../vue/sign_up_vue.php';
+include '../vue/footer_vue.php';
+
 ?>
