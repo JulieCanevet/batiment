@@ -1,3 +1,4 @@
+      <?php include '../vue/header_vue.php';?>
        <section class="row col-md-8 col-md-offset-2 registeration">
             
             <h3 class="headerSign">Ajouter une tâche</h3>      

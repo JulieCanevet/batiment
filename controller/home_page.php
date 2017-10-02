@@ -9,6 +9,7 @@ if(isset($_SESSION['name'])){
 	$project = home_project();
 
 include '../vue/home_page_vue.php'; // ajout des derniers projets
+include '../vue/footer_vue.php';
 }
 else {
 

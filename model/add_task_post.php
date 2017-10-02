@@ -21,7 +21,7 @@ function add_task($task_name, $id_project, $executed){ // envoie nvl taches dans
 	));
 }
 
-function create_task($id_project){ // Selectionne les tâches concernées par le projet
+function display_task($id_project){ // Selectionne les tâches concernées par le projet
 	global $bdd;
 
 	$req = $bdd -> prepare('SELECT * 
@@ -35,6 +35,34 @@ function create_task($id_project){ // Selectionne les tâches concernées par le
 	$new_task = $req -> fetchAll();
 	return $new_task;
 	}
+
+function update($executed, $id_project, $id){
+	global $bdd;
+	
+	$req = $bdd -> prepare ('UPDATE add_task
+		SET executed = :executed
+		WHERE id_project = :id_project AND id = :id
+		');
+	
+	$req->execute(array(
+		'executed' => $executed,
+		'id_project' => $id_project,
+		'id' => $id
+	));
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

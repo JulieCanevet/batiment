@@ -1,24 +1,52 @@
-<section id="taches">
+<article id="new_task">
 	<?php
-	if(isset($new_task)){
-?>		<h3>Tâches à réaliser :</h3>
- <?php
-	foreach ($new_task as $value) { ?>
-		<p><?php echo ' ' . $value['task_name'] . ' ';
-?><a href="substep.php?click=<?php echo $value['id']?>&id=<?php echo $id_project?>">sous-étapes</a></p>
-			<a href="delete.php?delete=<?php echo $value['id']?>&id=<?php echo $id_project ?>">Supprimer la tâche</a>
-<?php
-} }
-	
 
-	elseif(isset($new_substep)){?>
+	if(isset($new_task)){?> <!-- s'il y a des taches -->
+		<h3>Liste des tâches à réaliser :</h3>
+		<ul>
+ 		<?php
+		foreach ($new_task as $value) {	?>
+					<form action="project_sheet.php?id=<?php echo $id_project?>&id_task=<?php echo $value['id'] ?>" method="post">
+						
+						<input type="hidden" name="executed" value="<?php if ($value['executed'] == 0){
+						echo '1';
+						}
+						elseif($value['executed'] == 1){
+							echo '0';
+						} ?>">
+
+						<input type="submit" value="nonFait">						
+					</form><?php		
+				
+				if ($value['executed'] == 1){
+					?>
+		<li><p class="done"><?php echo ' ' . $value['task_name'] . ' ' ;?><?php
+	}
+			else{?>
+
+			<li><p><?php echo ' ' . $value['task_name'] . ' ' ;
+				} ?>
+					<a href="delete.php?delete=<?php echo $value['id']?>&id=<?php echo $id_project ?>"><i class="fa fa-trash" aria-hidden="true"></i></a> <!--supprimer-->
+										
+					<a href="substep.php?click=<?php echo $value['id']?>&id=<?php echo $id_project ?>">Détail</a><!-- voir plus -->
+				</p>
+			</li>
+			<?php
+		} 
+		?>
+		</ul>
+		<?php
+	}
+
+	if(isset($new_substep)){?> <!-- s'il y a des sous-etapes -->
 		<h3>sous-étapes à réaliser :</h3>
  <?php	foreach ($new_substep as $value) { ?>
-			<h4><?php echo ' ' . $value['title'] . ' ';?></h4>
+			<h4><?php echo ' ' . $value['title'] . ' ';?><a href="delete.php?del=<?php echo $value['id']?>&id=<?php echo $id_project ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+			</h4>
 			<p><?php echo ' ' . $value['substep_description']?></p>
-			<a href="delete.php?del=<?php echo $value['id']?>&id=<?php echo $id_project ?>">Supprimer la sous-étape</a>
-e
+
 <?php }
 	}
 ?>
+</article>
 </section>
