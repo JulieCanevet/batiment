@@ -17,11 +17,11 @@
             
             <h3 class="headerSign">Votre profil</h3>      
             <form class="col-md-10" action="sign_in.php" method="post" enctype="multipart/form-data">
-                <input class="form-control" type="text" name="name" placeholder="Votre nom">
-                <input class="form-control" type="text" name="first_name" placeholder="Votre prénom">
-                <input class="form-control" type="text" name="age" placeholder="Votre âge">
-                <input class="form-control" type="text" name="email" placeholder="Votre adresse mail">
-                <input class="form-control" type="password" name="pass" placeholder="Mot de passe">
+                <label>Votre nom :</label><input class="form-control" type="text" name="name" placeholder="Votre nom">
+                <label>Votre prénom :</label><input class="form-control" type="text" name="first_name" placeholder="Votre prénom">
+                <label>Votre âge :</label><input class="form-control" type="text" name="age" placeholder="Votre âge">
+                <label>Votre adresse email :</label><input class="form-control" type="text" name="email" placeholder="Votre adresse mail">
+                <label>Votre mot de passe :</label><input class="form-control" type="password" name="pass" placeholder="Mot de passe">
 
              <button type="submit" class="signbuttons btn btn-primary">s'inscrire</button>
             </form>

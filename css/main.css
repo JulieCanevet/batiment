@@ -94,7 +94,10 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+body {
+    font-family: 'Questrial', sans-serif;
+    background-color: #eaf8f7;
+}
 #sign{
     text-align: center;
     padding-top: 3em;
@@ -103,7 +106,7 @@ textarea {
     margin: 1em;
 }
 
-/* Mise en forme du formulaire d'inscription et de connexion */
+/* form inscription and connexion design */
 .registeration{
     border-top: 5px solid #2196f3;
     box-shadow: 0px 5px 21px -2px rgba(0,0,0,0.47);
@@ -135,8 +138,13 @@ input{
     -webkit-transition: none !important;
 }
 
-.done {
-    color: green;
+.done { /* finished tasks*/
+    color: #79b821;
+    font-size: 1.5em;
+}
+.undone { /* unfinished tasks*/
+    color: #e80a0e;
+    font-size: 1.5em;
 }
 .headerSign{
     color: #2196f3;
@@ -144,7 +152,7 @@ input{
     text-align: center;
 }
 
-/* Mise en forme de la navbar */
+/* navbar design */
 #headerSign {
     width: 100%;
     display: flex;
@@ -155,7 +163,9 @@ input{
 .navbar {
     background-color: #f7ea02;
     z-index: 1;
-    color: white;
+    color: #a7b6bb;
+    letter-spacing: .15em;
+    box-shadow: 0 0 15px grey;
 }
 
 #hello {
@@ -169,40 +179,51 @@ nav ul li:hover {
     text-decoration: underline;
 }
 
-/* disposition des cartes de projet */
+/* disposition of cards projects */
 .card {
     width: 80%;
     margin: auto;
     margin-top: 2em;
 }
-#taches {
-    text-align: center;
-}
 
-/* mise en forme des fiches projet  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.btn-primary {
+    background-color: #e8aa0a;
+    border-color: #e8aa0a;
+}
+.btn-primary:hover{
+    background-color: #f7ea02; 
+    border-color: #f7ea02;  
+}
+h4{
+    color: #e8aa0a;
+}
+/* design cards projects in project sheet */
 #project_sheet{
-    background-color: #D9D3D3;
+    background-color: #a7b6bb;
     padding: 5em 2em 2em 2em;
-    font-family: 'Questrial', sans-serif;
 }
 #project_description a {
     color: #f7ea02;
 }
 
-/* mise en forme de la description des sous-etapes */
+/* design of substep description */
     #new_task {
     border: 10px solid #f7ea02ac;
     background-color: #fcfff3e1;
     border-radius: 0;
-    padding: 1em;
+    padding: 1em !important;
     margin: 5em auto 2em auto;
 }
 
-    #project_sheet h2, #project_sheet h3 {
+#taches {
+    text-align: center;
+}
+
+#project_sheet h2, #project_sheet h3 {
         letter-spacing: .1em;
     }
 
-.display_tasks_substeps { /* article options des taches*/
+.display_tasks_substeps { /* tasks option*/
     display: flex;
 }
 
@@ -222,7 +243,7 @@ nav ul li:hover {
     top:0;
     background-color: #f7ea02ac;
 }
-/* SECTION CARTES ACCUEIL */
+/* cards in home page */
     #cartes {
         display: flex;
         justify-content: space-around;
@@ -231,7 +252,7 @@ nav ul li:hover {
     }
 
 
-/* mise en forme de la fiche project */
+/* projects sheet design */
     #project_sheet
     {
         display: flex;

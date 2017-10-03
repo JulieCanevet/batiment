@@ -11,11 +11,11 @@
 				
 				if ($value['executed'] == 1){
 					?>
-		<li><h4 class="done"><?php echo ' ' . $value['task_name'] . ' ' ;?></h4><?php
+		<li><p class="done"><?php echo ' ' . $value['task_name'] . ' ' ;?></p><?php
 	}
 			else{?> 
 
-			<li><p><?php echo ' ' . $value['task_name'] . ' ' ;
+			<li><p class="undone"><?php echo ' ' . $value['task_name'] . ' ' ;
 				} ?>
 				<form class="bouton" action="project_sheet.php?id=<?php echo $id_project?>&id_task=<?php echo $value['id'] ?>" method="post">
 						
