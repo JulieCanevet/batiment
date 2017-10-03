@@ -1,29 +1,29 @@
 <?php 
 session_start();
-// Si tous les champs sont remplis
+// if all fields are full
 if(!empty($_POST['name']) && !empty($_POST['first_name']) && !empty($_POST['age']) && !empty($_POST['email']) && !empty($_POST['pass'])){
 include '../model/sign_in_post.php';
 
 if(preg_match("#^[1-9]{2}$#", $_POST['age'])){
 	if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['email'])){
 
-//lancement de la fonction pour savoir si le pseudo est unique
+//launches the function to know if the name is unique
 	$name = name($_POST['name'], $bdd);
 	
-	if($name){ // Si le nom est déjà pris
+	if($name){ // if the name is not unique
 		echo 'un utilisateur a le même nom que toi (surement ton frere), ajoute un chiffre derriere';
 	}
 	else {
-		// cache le mot de passe
+		// hide password
 		$pass_hache = sha1($_POST['pass']);
-		// Sinon lancement de la fonction pour enregistrer les infos en bdd
+		// else, launches the function to save informations in database
 		inscription($_POST['name'], $_POST['first_name'], $_POST['age'], $_POST['email'], $pass_hache, $bdd);
 
-		// enregistrement des variables de session nom et prénom
+		// save session variable name and firstname
 		$_SESSION['first_name'] = $_POST['first_name'];
 		$_SESSION['name'] = $_POST['name'];
 
-		// redirection vers la page d'accueil
+		// redirection to home page
 		ob_start();
 		header('Location:home_page.php');
 		ob_end_flush();

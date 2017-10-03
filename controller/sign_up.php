@@ -5,18 +5,18 @@ include '../model/sign_up_post.php';
 
 if(!empty($_POST['name']) && !empty($_POST['pass'])){
 
-	$check_name = check_name($_POST['name'], $bdd); //lancement de la fonction
+	$check_name = check_name($_POST['name'], $bdd); // launches function to check the name
 	$pass_hache = sha1($_POST['pass']);
 
-	if(!$check_name){ // Si aucun nom ne correspond
+	if(!$check_name){ // if no matching name
 		echo 'pseudo incorrect';
 	}	
-	elseif($pass_hache != $check_name['pass']){ // si le nom est trouvé mais pas le pass
+	elseif($pass_hache != $check_name['pass']){ // if matching name but no password
 		echo 'mot de passe incorrect';
 	}
-	elseif ($pass_hache == $check_name['pass']){ // si le nom et le mdp correspondent
+	elseif ($pass_hache == $check_name['pass']){ // if name and password are matching
 		
-		// enregistrement des variables de session nom et prénom
+		// save session variables of name and firstname
 		$_SESSION['first_name'] = $check_name['first_name'];
 		$_SESSION['name'] = $_POST['name'];
 		

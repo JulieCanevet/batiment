@@ -1,20 +1,20 @@
 <?php
 include '../model/delete_post.php';
 
-if (isset($_GET['click'])){ // suppression des projets
+if (isset($_GET['click'])){ // suppression of projects
 
 	$delete = delete($_GET['click'], $bdd);
-	header('Location:project_sheet.php?id=' . $id_project . '&id_task=' . $value['id']);
+	header('Location:home_page.php');
 }
 
-if (isset($_GET['del'])){ // suppression des sous étapes
+if (isset($_GET['del'])){ // suppression of substeps
 	$delete = delete_substep($_GET['del'], $bdd);
 	$id_project = $_GET['id'];
-	include '../vue/delete_substep_vue.php';
+	header('Location:project_sheet.php?id=' . $id_project);
 }
 
-if (isset($_GET['delete'])){ // suppression des taches
+if (isset($_GET['delete'])){ // suppression of tasks
 	$delete = delete_task($_GET['delete'], $bdd);
 	$id_project = $_GET['id'];
-	include '../vue/delete_task_vue.php';
+	header('Location:project_sheet.php?id=' . $id_project);
 }

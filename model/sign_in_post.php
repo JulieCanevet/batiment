@@ -1,8 +1,8 @@
 <?php      
    
-try //Connexion to base de donnees
+try //Connexion to database
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=batiment;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=localhost;dbname=building;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {
@@ -22,6 +22,7 @@ function name ($username, $bdd){
 	return $name;
 }
 
+// insertion of datas in database
 function inscription ($name, $first_name, $age, $email, $pass, $bdd){
 	$inscription = $bdd -> prepare ('INSERT INTO login (name, first_name, age, email, pass)
 		VALUES (:name, :first_name, :age, :email, :pass)');

@@ -1,14 +1,14 @@
 <?php
 try //Connexion to database
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=batiment;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=localhost;dbname=building;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {
         die('Erreur : '.$e->getMessage());
 }
 
-function add_substep($title, $substep_description, $id_task, $executed_substep){ // envoie nvl sous-etape dans bdd
+function add_substep($title, $substep_description, $id_task, $executed_substep){ // add new substed in database
 	global $bdd;
 
 	$req = $bdd -> prepare('INSERT INTO substep (title, substep_description, id_task, executed_substep) 
@@ -22,7 +22,7 @@ function add_substep($title, $substep_description, $id_task, $executed_substep){
 	));
 }
 
-function create_substep($id_task){ // Selectionne les sous-etapes concernées par le projet
+function display_substep($id_task){ // Select all substeps related to the project
 	global $bdd;
 
 	$req = $bdd -> prepare('SELECT * 

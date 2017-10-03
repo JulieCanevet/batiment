@@ -4,7 +4,7 @@ include '../model/project_sheet_post.php';
 include '../model/add_task_post.php';
 
 $id_project = $_GET['id'];
-$project = project($id_project, $bdd);
+$project = project($id_project, $bdd); //launches the function to display de good project sheet
 
 $new_task = display_task($id_project);
 

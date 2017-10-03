@@ -4,11 +4,11 @@ session_start();
 	ob_start();
 if(isset($_SESSION['name'])){
 	include '../model/home_page_post.php';
-	include '../vue/header_vue.php'; // ajout du header page d'accueil
+	include '../vue/header_vue.php'; // add header home page
 
 	$project = home_project();
 
-include '../vue/home_page_vue.php'; // ajout des derniers projets
+include '../vue/home_page_vue.php'; // add projects
 include '../vue/footer_vue.php';
 }
 else {

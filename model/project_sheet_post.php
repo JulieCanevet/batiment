@@ -1,7 +1,7 @@
 <?php
 try //Connexion to database
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=batiment;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=localhost;dbname=building;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {
@@ -9,7 +9,7 @@ catch(Exception $e)
 }
 
 // tchek if name is unique
-function project ($id_project, $bdd){
+function project ($id_project, $bdd){ // select the good project for project sheet
 	$req = $bdd -> prepare('SELECT * FROM construction_project
 		WHERE id = :id');
 	
